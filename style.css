@@ -1,0 +1,1590 @@
+/* General Styles for Desktop (default) */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    background-color: #111;
+    color: #fff;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 10%;
+    z-index: 1000; /* Ensure this is higher than other elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 5;
+}
+
+body header h1 {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+    body header h1 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    body header h1 {
+        font-size: 18px;
+        padding-left: 8px;
+    }
+}
+
+
+
+
+header nav ul li a {
+    font-size: 15px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff; /* White text color */
+    padding-left: 2px;
+    padding-right: 2px;
+    text-decoration: none;
+
+}
+
+header nav {
+    margin-right: 0px;
+    margin-left: 50px;
+    height: 10px;
+    padding-top: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin-left: 10px;
+    margin-right: 15px;
+}
+
+nav ul li a:hover {
+    color: #00b5ad;
+    background-color: rgba(255, 255, 255, 0.2); /* White background with 20% transparency on hover */
+    border-radius: 5px;
+}
+.Manu-icon {
+    width: 30px;
+    cursor: pointer;
+    padding-right: 30px;
+    display: none;
+}
+
+.nav-icon {
+    width: 16px; /* Adjust size as needed */
+    height: 16px;
+    margin-right: 5px; /* Adds space between the icon and text */
+    vertical-align: middle; /* Aligns the icon vertically with the text */
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.8); /* Dark background for mobile menu */
+        position: absolute;
+        top: 75px; /* Ensure it appears just below the header */
+        right: 0;
+        width: 100%;
+        max-height: 0; /* Initially hidden */
+        overflow: hidden; /* Hide overflowing items */
+        transition: max-height 0.3s ease; /* Smooth transition */
+        z-index: 2;
+    }
+
+    nav ul.show {
+        max-height: 200px; /* Adjust this value to fit your menu items */
+    }
+    
+    /* Add this to cover the entire screen */
+    .menu-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        z-index: 1;
+        display: none; /* Hidden by default */
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    nav ul li a {
+        font-size: 16px; /* Visible font size */
+        display: block;
+        padding: 10px;
+        width: 100%; /* Links take the full width */
+    }
+
+    .Manu-icon {
+        display: flex; /* Make sure the icon is displayed */
+        cursor: pointer;
+        z-index: 1100; /* Ensure the icon is visible */
+    }
+}
+
+@media (max-width: 425px) {
+    nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        background-color: #000;
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        top: 40px;
+        z-index: 1001;
+        max-height: 100vh; /* Ensure the menu doesn't exceed the viewport height */
+        overflow-y: auto;  /* Enable scrolling if content exceeds the screen size */
+    }
+    
+    nav ul li {
+        padding: 0;
+        text-align: center;
+        margin-bottom: -11px;
+    }
+}
+
+@media (max-width: 320px) {
+    .profile-image {
+        order: 1; /* Image comes first */
+        width: 100%; /* Full width for the image on small screens */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 120px; /* Add space between the image and text */
+        padding-top: 100px; /* This is creating a large gap */
+    }
+    .nav ul {
+        padding: 0;
+    }
+
+    .Manu-icon {
+        margin-left: -20px;
+    }
+}
+
+
+nav ul {
+    display: flex;
+}
+
+/* Hide the toggle button on larger screens */
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        z-index: 1100;
+    }
+}
+
+
+
+/* Home Section ----------------------------------------------------------- */
+#home {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    background: url('Images/back3.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the background image covers the entire area */
+    padding: 20px;
+    margin: 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: row; /* Default to row layout for desktop */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+}
+
+.profile-image img {
+    background-color: transparent;
+    border: 1px solid #00b5ad;
+    border-radius: 100px;
+    width: 60%; /* Adjust the width as needed for desktop */
+    box-sizing: border-box;
+}
+
+.text-container {
+    width: 50%;
+    padding: 20px;
+    color: #fff;
+    max-width: 50%;
+}
+
+@font-face {
+    font-family: 'DragonHunter'; /* Simple name for the font */
+    src: url('fonts/DragonHunter-9Ynxj.otf') format('truetype'); /* Correct format and file path */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.text-container h2 {
+    font-family: 'DragonHunter', sans-serif; /* Ensure font name matches @font-face */
+    color: #00b5ad; /* Change color as you like */
+    letter-spacing: 2px; /* Optional: add some letter spacing */
+    font-size: 10px; /* Increase size for testing */
+}
+
+.text-container p {
+    text-align: left;
+    margin: 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #fff;
+    word-wrap: break-word;
+}
+
+.intro {
+    padding-top: 70px;
+}
+
+header {
+    animation: fadeIn 0.5s ease forwards; /* Add this line */
+}
+
+/* Button Hover Animation */
+.intro .btn {
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add this line */
+}
+
+.btn:hover {
+    background-color: #ffffff; /* Change background on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+
+.intro h2 {
+    font-size: 30px;
+    color: #00b5ad;
+    padding-top: 25px;
+}
+
+.intro p {
+    font-size: 20px;
+    margin: 2px 3;
+    padding-bottom: 10px;
+    width: 80%;
+    line-height: 1.5; /* Improves readability by increasing line spacing */
+}
+
+.intro .btn {
+    background-color: #00b5ad;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+/* Responsive adjustments for smaller screens 768-----------------------------------*/
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; /* Stack elements vertically on smaller screens */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile-image {
+        order: 1; /* Image comes first */
+        width: 100%; /* Full width for the image on small screens */
+        display: flex;
+        justify-content: center;
+        margin-bottom: 120px; /* Add space between the image and text */
+        padding-top: 400px; /* This is creating a large gap */
+    }
+
+    .profile-image img {
+        width: 150px; /* Adjust the size of the image */
+        height: 150px;
+        border-radius: 50%; /* Keep the rounded shape */
+    }
+
+    .text-container {
+        order: 2; /* Text comes second */
+        width: 90%;
+        max-width: 100%;
+        text-align: center; /* Center text for better readability on small screens */
+        padding: 10px;
+    }
+
+    .text-container h2 {
+        margin-top: -70px; /* Reduce this value */
+        margin-bottom: 220px; /* Add space between the image and text */
+    }
+
+    .text-container p {
+        font-size: 1em;
+        height: 80px;
+        text-align: justify; /* Justify text for a cleaner look on small screens */
+        padding-left: 30px;
+    }
+
+    .btn {
+        .btn {
+            margin-top: 20px;
+            padding-bottom: 120px; /* You likely want to reduce this */
+        }
+        
+    }
+}
+
+
+
+
+/* Header Fade-In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+
+/* Responsive Styles (Mobile) 545px ----------------------------------------------------*/
+@media (max-width: 545px) {
+    /* Stack content vertically for mobile */
+    .content {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0px; /* Keep reduced padding */
+    }
+
+    .profile-image {
+        order: 1;
+        width: 180px; /* Reduce image size further */
+        height: 180px;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+        padding-top: 5px; /* Reduce top padding */
+    }
+
+    .profile-image img {
+        width: 140px;
+        height: 180px;
+        border-radius: 20%;
+        margin-top: 20px; /* Adjust margin to bring it closer to the text */
+        padding: 0;
+    }
+
+    .text-container {
+        order: 2;
+        width: 90%;
+        max-width: 100%;
+        text-align: center;
+        margin-top: 5px; /* Bring text closer to the image */
+        padding-bottom: 5px; /* Reduce bottom padding */
+    }
+
+    .text-container h2 {
+        font-size: 1.2em;
+        margin-bottom: 5px; /* Reduce space between heading and paragraph */
+    }
+
+    .text-container p {
+        font-size: 0.9em;
+        line-height: 1.1;
+        margin-top: 5px; /* Bring paragraph closer to the heading */
+        margin-bottom: 10px; /* Adjust bottom margin to reduce spacing */
+        padding: 0;
+        text-align: center;
+        padding-left: 40px;
+    }
+
+    .text-container .btn {
+        height: 25px;
+        width: 70px;
+        align-items: center;
+        background-color: #fdfcfc;
+        color: #000;
+        padding: 5px 15px; /* Adjust padding to reduce button size */
+        margin-top: 250px; /* Bring button closer to the paragraph */
+        border-radius: 5px;
+        font-size: 14px;
+        text-decoration: none;
+    }
+}
+
+
+
+/* Small Screens (Phone) 425px------------------------------------------------------------*/
+@media (max-width: 425px) {
+    .profile-image {
+        padding-top: 20px; /* Adjusted padding for the image */
+        margin-bottom: 0px;
+    } 
+    .profile-image img {
+        width: 150px; /* Smaller image size for phone */
+        height: 170px;
+    }
+
+    .text-container h2 {
+        font-size: 1.2em;
+        margin-bottom: 5px; /* Further reduced gap between h2 and p */
+        padding-top: 50px;
+    }
+
+    .text-container p {
+        font-size: 0.8em;
+        line-height: 1.2;
+        text-align: center;
+        margin-top: 0; /* Remove any top margin */
+        margin-bottom: 15px; /* Adjust bottom margin as needed */
+        padding-top: 0;
+        padding-left: 20px;
+        padding-bottom: 50px;
+    }
+
+    .text-container .btn {
+        height: 35px;
+        width: 70px;
+        align-items: center;
+        background-color: #fdfcfc;
+        color: #000;
+        margin-left: 5px;
+        margin-top: 100px;
+        padding-top: 0px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        padding-bottom: 5px;
+        margin-bottom: 2px;
+    }
+}
+
+/* Very Small Screens (Phone) 320px ---------------------------------------------------------------*/
+@media (max-width: 320px) {
+    .profile-image {
+        padding-top: 25px; /* Adjusted padding for the image */
+        margin-bottom: 0px;
+    } 
+    .profile-image img {
+        width: 140px; /* Smaller image size for phone */
+        height: 170px;
+    }
+
+    .text-container h2 {
+        font-size: 1em;
+        margin-bottom: 5px; /* Further reduced gap between h2 and p */
+        padding-top: 50px;
+    }
+
+    .text-container p {
+        width: 200px;
+        font-size: 0.8em;
+        line-height: 1.4;
+        text-align: center;
+        margin-top: 0; /* Remove any top margin */
+        margin-bottom: 15px; /* Adjust bottom margin as needed */
+        padding-top: 0;
+        padding-left: 20px;
+        padding-bottom: 110px;
+    }
+
+    .text-container .btn {
+        height: 15px;
+        width: 50px;
+        align-items: center;
+        background-color: #fdfcfc;
+        color: #000;
+        padding: 10px 20px;
+        margin-left: 15px;
+        margin-top: 50px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 14px;
+        padding-bottom: 5px;
+        margin-bottom: 2px;
+    }
+}
+
+
+
+
+
+
+/* About Me Section -------------------------------------------------------------------*/
+
+/* Default desktop/tablet view (unchanged) */
+.about-content {
+    padding-top: 70px;
+    padding-left: 250px;
+    padding-bottom: 70px;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover; 
+}
+
+.about-section {
+    display: flex;
+    align-items: left;
+    max-width: 1000px;
+}
+
+.about-me-img img {
+    width: 380px; /* Your original width */
+    height: 380px; /* Your original height */
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+    margin-right: 70px;
+    border-radius: 50px;
+}
+
+.about-content h2 {
+    font-size: 36px;
+    color: #00b5ad;
+    margin-bottom: 10px;
+    padding-right: 500px;
+    position: relative;
+
+}
+
+.about-content p {
+    line-height: 30px;
+    width: 480px;
+}
+
+.about-content p b {
+    line-height: 30px;
+    width: 480px;
+    font-size: 30px;
+    font-family: 'DragonHunter', sans-serif; /* Ensure font name matches @font-face */
+    color: #00b5ad; /* Change color as you like */
+    letter-spacing: 4px; /* Optional: add some letter spacing */
+}
+
+/* Responsive settings for phone view */
+@media (max-width: 768px) {
+    .about-section {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center the image and text */
+    }
+
+    .about-me-img img {
+        width: 250px; /* Maintain the original width */
+        height: 250px; /* Maintain the original height */
+        margin: 0 auto; /* Center the image */
+        margin-bottom: 20px; /* Adds space between image and text */
+        margin-right: 220px;
+    }
+
+    .about-content p {
+        height: 400px;
+        width: 250px;
+        line-height: 25px;
+        font-size: 16px; /* Reduce font size for better readability */
+        text-align: center; /* Center the text for a better layout */
+        padding-right: 20px; /* Add some padding on the sides */
+        margin-right: 220px;
+        padding-bottom: 50px;
+    }
+
+    .about-content h2 {
+        font-size: 2em;
+        padding-top: 20px;
+        padding-right: 100px;  /* Adjust right padding */
+        padding-left: 10px;   /* Adjust left padding */
+        text-align: center;   /* Center align the text */
+        width: 100%;          /* Ensure full width */
+        margin-left: -120px;            /* Remove any margin */
+    }
+}
+
+
+
+
+/* Skills Section ------------------------------------------------*/
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+/* General Styles */
+.skills-content {
+    opacity: 1;
+    transition: opacity 2s;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.skills-content h2, .qualifications-content h2 {
+    font-size: 30px;
+    color: #00b5ad;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.work-experience-section {
+    padding-left: 70px;
+}
+
+.skills-section {
+    padding-left: 25px;
+}
+
+.skills-section, .work-experience-section {
+    width: 65%;
+}
+
+/* Responsive Grid for Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 50px;
+}
+
+.skill-card {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(105, 75, 75, 0.1);
+}
+
+.skill-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 18px;
+    color: #000000;
+    margin-top: 10px;
+}
+
+.skill-card p {
+    font-size: 14px;
+    color: #000000;
+}
+
+/* Experience Section ---------------------------------------------------*/
+.experience-card {
+    background-color: #080707;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.experience-card h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    font-size: 16px;
+    color: #00b5ad;
+    margin-bottom: 10px;
+}
+
+.experience-card ul {
+    padding-left: 20px;
+}
+
+.experience-card ul li {
+    margin-bottom: 10px;
+    font-size: 13.5px;
+    color: #ffffff;
+}
+
+.date {
+    float: right;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Media Query for Mobile Devices */
+/* For Desktop View (side by side layout) */
+@media (min-width: 769px) {
+    .skills-section, .work-experience-section {
+        width: 45%; /* Ensures both sections take 45% of the width */
+        display: inline-block; /* Places them side by side */
+        vertical-align: top;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two skills per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column for small screens */
+        gap: 15px;
+
+    }
+
+    .experience-card {
+        width: 150px;
+        height: 470px;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* Qualifications Section Styles ------------------------------------------------------------------*/
+.qualifications-content {
+    padding: 60px 20px;
+    text-align: center;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover; 
+}
+
+.qualifications-grid {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to next line on smaller screens */
+    justify-content: space-between; /* Adjust space between cards */
+    gap: 20px; /* Adds space between cards */
+    padding: 20px 0;
+}
+
+.qualifications-content h2 {
+    font-size: 36px;
+    color: #00b5ad;
+    margin-bottom: 20px;
+}
+
+.qualifications-content .subtitle {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.qualification-card {
+    background-color: #222;
+    border: 1px solid #00b5ad;
+    border-radius: 10px;
+    padding: 20px;
+    width: calc(25% - 20px); /* 4 cards in a row, adjust width to fit */
+    text-align: left;
+    position: relative;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.qualification-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.qualification-card h3 {
+    font-size: 24px;
+    color: #00b5ad;
+    margin-bottom: 10px;
+}
+
+.qualification-card p {
+    font-size: 14px;
+    word-spacing: 2%;
+    line-height: 20px;
+    color: #fff;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #00b5ad;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .qualification-card {
+        width: calc(50% - 20px); /* 2 cards per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .qualification-card {
+        width: calc(100% - 20px); /* Full width on very small screens */
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .qualification-card {
+        width: 50%; /* Two boxes per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .qualification-card {
+        width: 100%; /* One box per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .qualifications-content {
+        padding-top: 200px;
+    }
+}
+
+header h2 {
+    font-size: 24px;
+    color: #00b5ad;
+    margin-top: 10px;
+}
+
+/* Qualification Card Hover Animation */
+.qualification-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add this line */
+}
+
+.qualification-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+
+
+/* Projects Section ----------------------------------------------------------------*/
+.projects-content h2 {
+    font-size: 30px;
+    color: #00b5ad;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111111;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.projects {
+    padding: 50px 20px;
+    text-align: center;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover; 
+}
+
+.projects h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.projects .subtitle {
+    font-size: 20px;
+    color: #00b5ad;
+    margin-bottom: 50px;
+}
+
+/* Projects Container */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px; /* Adds space between cards */
+}
+
+/* Individual Project Card */
+.project-card {
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 15px;
+    padding: 20px;
+    width: 600px;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.project-card .btn {
+    display: inline-block;
+    background-color: #00b5ad;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+    background-color: #007c7c;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center; /* Center the cards vertically on smaller screens */
+    }
+
+    .project-card {
+        width: 90%; /* Full-width cards on smaller screens */
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-card {
+        width: calc(100% - 40px); /* Full width on small screens */
+    }
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: rgb(0, 0, 0);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #3a929e;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: hsl(0, 3%, 7%);
+    padding: 20px;
+  }
+
+/* Project Card Hover Animation */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add this line */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+
+
+
+
+/* Resume Download Section -------------------------------------------------------------*/
+.MyResume-section {
+    padding: 50px 20px;
+    padding-bottom: 100px;
+    text-align: center;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover; 
+}
+.resume-section {
+    height: 10vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.resume-container {
+    margin-top: 60px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darken the background for readability */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.resume-container h2 {
+    color: #00b5ad;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    font-size: 2em;
+}
+
+.resume-container p {
+    margin-bottom: 30px;
+    font-size: 1.2em;
+}
+
+.resume-container a {
+    font-size: 15px;
+    align-items: center;
+    padding-left: 170px;
+}
+
+.download-btn {
+    text-align: center;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.692);
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 0 0 20px rgba(238, 234, 234, 0.397);
+    background: #007c7c;
+    overflow: hidden;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 8px;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: 0.2s;
+    border: 1px solid transparent;
+  }
+  
+  .download-btn:hover {
+    border-color: rgba(235, 232, 232, 0.623);
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.144),
+      rgba(255, 255, 255, 0.247),
+      rgba(255, 255, 255, 0.39)
+    );
+    box-shadow: 0 6px rgba(255, 255, 255, 0.623);
+    transform: translateY(-6px);
+  }
+  
+  .download-btn:active {
+    transform: translateY(2px);
+    box-shadow: none;
+  }
+
+/* Responsive Resume Download Section for phone view */
+@media (max-width: 768px) {
+    .MyResume-section {
+        padding: 20px 10px;
+        background-size: cover; /* Ensure background covers smaller screens properly */
+    }
+
+    .resume-container {
+        margin-top: 20px;
+        padding: 15px; /* Reduce padding for mobile */
+        border-radius: 8px;
+        max-width: 90%; /* Adjust max width for mobile */
+        width: 100%; /* Ensure full width usage */
+        background: rgba(0, 0, 0, 0.8); /* Slightly darker background */
+    }
+
+    .resume-container h2 {
+        font-size: 1.8em; /* Smaller heading for mobile */
+    }
+
+    .resume-container p {
+        font-size: 1em; /* Reduce paragraph font size for mobile */
+        margin-bottom: 15px;
+    }
+
+    .resume-container a {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 10px 0;
+        text-align: center; /* Center the button text */
+    }
+
+    .download-btn {
+        font-size: 0.85rem; /* Adjust button text for mobile */
+        width: 100%; /* Full width button for mobile */
+        padding: 12px; /* Adjust padding */
+        justify-content: center; /* Center content */
+        margin: 0 auto; /* Center the button */
+    }
+}
+
+/* Contact Me Section --------------------------------------------------------------*/
+.contact-content {
+    padding: 50px 20px;
+    text-align: center;
+    background: url('Images/back2.jpg') no-repeat center center;
+    background-size: cover; 
+}
+
+
+.contact-content h2 {
+    margin-top: 50px;
+    font-size: 30px;
+    color: #00b5ad;
+}
+
+.form {
+    display: grid;
+    flex-direction:column;
+    margin-left: 100px;
+    margin-bottom: 80px;
+    gap: 20px;
+    max-width: 500px;
+    background-color: #000000;
+    padding: 40px;
+    border-radius: 40px;
+    position: relative;
+  }
+  
+  .message {
+    color: #00b5ad;
+    font-size: 14px;
+  }
+  
+  .flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+  }
+  
+  .form label {
+    position: relative;
+  }
+  
+  .form label .input {
+    width: 100%;
+    padding: 15px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid #00b5ad;
+    border-radius: 5px;
+  }
+  
+  .form label .input + span {
+    padding-top: 10px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: #000000;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input:placeholder-shown + span {
+    top: 15px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input:focus + span,.form label .input:valid + span {
+    top: 30px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input:valid + span {
+    color: green;
+  }
+  
+  .input01 {
+    width: 100%;
+    padding: 10px 10px 20px 10px;
+    outline: 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+  }
+  
+  .form label .input01 + span {
+    position: absolute;
+    left: 10px;
+    top: 50px;
+    color: #000000;
+    font-size: 0.9em;
+    cursor: text;
+    transition: 0.3s ease;
+  }
+  
+  .form label .input01:placeholder-shown + span {
+    top: 40px;
+    font-size: 0.9em;
+  }
+  
+  .form label .input01:focus + span,.form label .input01:valid + span {
+    top: 50px;
+    font-size: 0.7em;
+    font-weight: 600;
+  }
+  
+  .form label .input01:valid + span {
+    color: green;
+  }
+  
+  .fancy {
+    background-color: white;
+    border: 2px solid #00b5ad;
+    border-radius: 10px;
+    box-sizing: border-box;
+    color: #00b5ad;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 390;
+    letter-spacing: 2px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 8px 30px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+  }
+  
+  .fancy::before {
+    content: " ";
+    width: 1.7rem;
+    height: 2px;
+    background: #000000;
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform: translateX(230%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+  }
+  
+  .fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #000000;
+    transform: translateX(30%);
+  }
+  
+  .fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #00b5ad;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+  }
+  
+  .fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #00b5ad;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+  }
+  
+  .fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #00b5ad;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+  }
+  
+  .fancy:hover {
+    color: #00b5ad;
+    background: #00b5ad;
+  }
+  
+  .fancy:hover::before {
+    width: 1.5rem;
+    background: #355891;
+  }
+  
+  .fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+  }
+  
+  .fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+  }
+  
+  .fancy:hover .bottom-key-1,
+   .fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+  }
+
+/* Responsive Form for Phone View */
+
+@media (max-width: 768px) {
+    .contact-content {
+        padding: 20px 10px;
+    }
+
+    .contact-content h2 {
+        font-size: 24px;
+    }
+
+    .form {
+        margin-left: 0;
+        margin-bottom: 50px;
+        max-width: 100%;
+        padding: 20px;
+        border-radius: 20px;
+    }
+
+    .flex {
+        flex-direction: column; /* Stack the first and last name fields */
+        gap: 10px;
+    }
+
+    .form label .input, 
+    .form label .input01 {
+        width: 100%; /* Make input fields full width */
+        padding: 10px;
+    }
+
+    .form label .input + span,
+    .form label .input01 + span {
+        font-size: 0.8em; /* Adjust label size */
+    }
+
+    .fancy {
+        padding: 10px 20px; /* Adjust button size */
+        font-size: 14px;
+    }
+
+    .fancy .text {
+        padding-right: 80px;
+        text-align: center; /* Center text on button */
+    }
+}
+
+
+/* Footer Section --------------------------------------------------------------------*/
+/* Default styling for larger screens */
+footer {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    display: flex;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media query for phone view (425px width) */
+@media only screen and (max-width: 425px) {
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 10px;          /* Reduce padding for smaller screens */
+    }
+}
+
+
+.btn {
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+footer p {
+    font-size: 15px;
+    padding-left: 80px;
+    padding-bottom: 10px;
+    line-height: 150%;
+
+}
+
+/* Responsive footer paragraph for phone view */
+@media (max-width: 768px) {
+    footer p {
+        font-size: 12px; /* Reduce font size for better readability */
+        padding-left: 20px; /* Reduce padding for smaller screens */
+        padding-bottom: 10px;
+        line-height: 140%; /* Adjust line height slightly */
+    }
+}
+
+
+/* Scoial media platforms */ 
+.parent {
+    width: 100%;
+    height: 100%;
+    padding-right: 80px;
+    padding-top: 30px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
+  }
+  
+  .child {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.85);
+    border-radius: 5px;
+    margin: 0 5px;
+    box-shadow: inset 1px 1px 2px #fff, 0 0 5px rgba(255, 255, 255, 0.133);
+  }
+  
+  .child:hover {
+    background-color: rgb(233, 223, 223);
+    transform: perspective(180px) rotateX(60deg) translateY(2px);
+  }
+  
+  .button {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.85, 0.265, 1.55);
+  }
+  
+  .child:hover > .button {
+    transform: translate3d(0px, 20px, 30px) perspective(80px) rotateX(-60deg) translateY(2px) translateZ(10px);
+  }
+  
+/* Responsive Social Media Platforms for Phone View */
+
+@media (max-width: 768px) {
+    .parent {
+        padding-right: 0;
+        padding-top: 20px;
+        justify-content: center; /* Center icons on phone screens */
+        flex-wrap: wrap; /* Wrap the icons on smaller screens */
+    }
+
+    .child {
+        width: 40px; /* Reduce size for smaller screens */
+        height: 40px;
+        margin: 5px;
+        transition: all 0.3s cubic-bezier(0.68, 0.85, 0.265, 1.85);
+    }
+
+    .button {
+        font-size: 16px; /* Reduce icon size */
+        transition-duration: 0.3s;
+    }
+
+    .child:hover {
+        transform: perspective(150px) rotateX(50deg) translateY(1px); /* Adjust animation for smaller screen */
+    }
+
+    .child:hover > .button {
+        transform: translate3d(0px, 15px, 25px) perspective(70px) rotateX(-50deg) translateY(1px) translateZ(8px);
+    }
+}
